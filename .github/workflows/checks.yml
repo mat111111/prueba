@@ -1,0 +1,31 @@
+# Control de calidad automático en cada push y pull request:
+# valida el HTML y la sintaxis de JavaScript.
+name: Quality checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate HTML
+        run: npx --yes html-validate@9 index.html 404.html
+
+      - name: Check JavaScript syntax
+        run: |
+          for f in assets/js/*.js; do
+            node --check "$f"
+          done

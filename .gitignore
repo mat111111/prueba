@@ -1,0 +1,18 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Dependencias y logs (por si en el futuro agregás herramientas)
+node_modules/
+npm-debug.log*
+
+# Nunca subir secretos
+.env
+.env.*
+*.pem
+*.key

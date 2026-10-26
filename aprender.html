@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Hub de aprendizaje · Ruta para trabajo remoto</title>
+  <meta name="description" content="Ruta interactiva para aprender programación backend y seguridad web: temas, recursos, quizzes de razonamiento y plan semanal.">
+  <meta name="theme-color" content="#f7f8fa">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/learn.css">
+  <script src="assets/js/theme-init.js"></script>
+  <script src="assets/js/learn-data.js" defer></script>
+  <script src="assets/js/learn.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">←</span>
+        <span class="brand-name">Portfolio</span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Secciones">
+        <ul>
+          <li><a href="#ruta">Ruta</a></li>
+          <li><a href="#temas">Temas</a></li>
+          <li><a href="#quizzes">Quizzes</a></li>
+          <li><a href="#biblioteca">Biblioteca</a></li>
+          <li><a href="#semana">Semana</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Cambiar modo oscuro" aria-pressed="false">
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menú">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ PANEL PRINCIPAL ============ -->
+    <section class="learn-hero">
+      <div class="container">
+        <p class="eyebrow">aprender</p>
+        <h1>Hub de aprendizaje</h1>
+        <p class="hero-text">Todo el material del plan para trabajo remoto en un solo lugar: una ruta por etapas, fichas de cada tema con un primer paso de 20 minutos, quizzes que te hacen razonar y un plan semanal. Tu progreso se guarda en este navegador.</p>
+
+        <div class="exam-banner" id="exam-banner" hidden>
+          <strong>Época de parciales.</strong>
+          <span id="exam-banner-text">Hasta el 20/11 la prioridad es la facultad. Del plan remoto, solo lectura liviana.</span>
+        </div>
+
+        <div class="dashboard">
+          <div class="card progress-card">
+            <div class="ring" id="overall-ring" role="img" aria-label="Progreso total">
+              <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                <circle class="ring-fg" id="ring-fg" cx="60" cy="60" r="52"/>
+              </svg>
+              <span class="ring-label" id="overall-pct">0%</span>
+            </div>
+            <ul class="stats">
+              <li><span class="stat-num" id="stat-topics">0/0</span><span class="stat-label">temas dominados</span></li>
+              <li><span class="stat-num" id="stat-tasks">0/0</span><span class="stat-label">tareas de la ruta</span></li>
+              <li><span class="stat-num" id="stat-quizzes">0/0</span><span class="stat-label">quizzes aprobados (≥ 80 %)</span></li>
+              <li><span class="stat-num" id="stat-due">0</span><span class="stat-label">repasos pendientes</span></li>
+            </ul>
+          </div>
+
+          <div class="card today-card">
+            <h2 class="h3">¿Qué hago hoy?</h2>
+            <p class="muted">Te propongo el siguiente paso según tu progreso y la fecha: un repaso pendiente o la próxima tarea de la ruta.</p>
+            <button class="btn btn-primary" id="today-btn" type="button">Decime qué hacer</button>
+            <div class="today-result" id="today-result" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <details class="how-to">
+          <summary>Cómo usar este hub para aprender fácil (3 reglas)</summary>
+          <ol>
+            <li><strong>Empezá chico.</strong> Cada tema tiene un paso de unos 20 minutos. Hacé solo eso: arrancar es lo más difícil.</li>
+            <li><strong>Evocá, no releas.</strong> Hacé el quiz <em>sin mirar</em> los apuntes. Equivocarte y leer la explicación es justamente lo que fija el conocimiento (práctica de evocación).</li>
+            <li><strong>Espaciá.</strong> Si sacás menos de 80 %, el quiz vuelve a aparecer mañana; si aprobás, en 7 días. Hacé los repasos pendientes antes de empezar algo nuevo.</li>
+          </ol>
+        </details>
+
+        <div class="data-actions">
+          <button class="btn btn-small" id="export-btn" type="button">Exportar progreso</button>
+          <label class="btn btn-small" for="import-file">Importar progreso</label>
+          <input class="sr-only" id="import-file" type="file" accept="application/json,.json">
+          <button class="btn btn-small btn-link" id="reset-btn" type="button">Reiniciar todo</button>
+          <p class="status" id="data-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RUTA ============ -->
+    <section class="section" id="ruta" aria-labelledby="ruta-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">01</p>
+          <h2 id="ruta-title">Ruta por etapas</h2>
+          <p class="section-intro">El plan del PDF convertido en checklist. Marcá cada tarea al terminarla; las que tienen un tema asociado te llevan a su ficha.</p>
+        </div>
+        <div class="stages" id="stages"></div>
+      </div>
+    </section>
+
+    <!-- ============ TEMAS ============ -->
+    <section class="section section-alt" id="temas" aria-labelledby="temas-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">02</p>
+          <h2 id="temas-title">Temas</h2>
+          <p class="section-intro">Cada ficha te dice qué es, por qué importa para trabajar remoto, cómo empezar hoy y un desafío práctico. Marcá su estado a medida que avanzás.</p>
+        </div>
+        <div class="filters" id="track-filters" role="group" aria-label="Filtrar temas por área"></div>
+        <p class="sr-only" id="topics-count" role="status" aria-live="polite"></p>
+        <div class="topics" id="topics"></div>
+      </div>
+    </section>
+
+    <!-- ============ QUIZZES ============ -->
+    <section class="section" id="quizzes" aria-labelledby="quizzes-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">03</p>
+          <h2 id="quizzes-title">Quizzes</h2>
+          <p class="section-intro">Preguntas para seguir código y razonar, no para memorizar. Cada respuesta trae su explicación. Se aprueba con 80 %.</p>
+        </div>
+        <div class="grid grid-3" id="quiz-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ BIBLIOTECA ============ -->
+    <section class="section section-alt" id="biblioteca" aria-labelledby="biblioteca-title">
+      <div class="container two-col">
+        <div class="section-head">
+          <p class="eyebrow">04</p>
+          <h2 id="biblioteca-title">Biblioteca</h2>
+          <p class="section-intro">Libros, canales y podcasts del plan. Marcá lo que ya leíste o viste.</p>
+        </div>
+        <ul class="library" id="library"></ul>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICACIONES ============ -->
+    <section class="section" id="certificaciones" aria-labelledby="cert-title">
+      <div class="container two-col">
+        <div class="section-head">
+          <p class="eyebrow">05</p>
+          <h2 id="cert-title">Certificaciones</h2>
+          <p class="section-intro">Con una alcanza para empezar. Elegí según tu camino: seguridad (ISC2 CC o Security+) o backend y cloud (AWS). Verificá precios antes de pagar.</p>
+        </div>
+        <ul class="library" id="certs"></ul>
+      </div>
+    </section>
+
+    <!-- ============ SEMANA ============ -->
+    <section class="section section-alt" id="semana" aria-labelledby="semana-title">
+      <div class="container two-col">
+        <div class="section-head">
+          <p class="eyebrow">06</p>
+          <h2 id="semana-title">Plan semanal</h2>
+          <p class="section-intro">10 a 12 horas por semana. Los casilleros se reinician solos cada lunes.</p>
+          <p class="week-label" id="week-label"></p>
+        </div>
+        <ul class="week" id="week"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="index.html">← Volver al portfolio</a></p>
+      <p class="footer-note">El progreso se guarda solo en este navegador. Usá "Exportar progreso" para pasarlo a otro dispositivo.</p>
+    </div>
+  </footer>
+
+  <!-- ============ DIÁLOGO DEL QUIZ ============ -->
+  <dialog class="quiz-dialog" id="quiz-dialog" aria-labelledby="quiz-title">
+    <div class="quiz-head">
+      <div>
+        <p class="eyebrow" id="quiz-step"></p>
+        <h2 class="h3" id="quiz-title">Quiz</h2>
+      </div>
+      <button class="icon-btn icon-btn-sm" id="quiz-close" type="button" aria-label="Cerrar quiz">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="quiz-bar" aria-hidden="true"><span id="quiz-bar-fill"></span></div>
+    <div class="quiz-body" id="quiz-body"></div>
+  </dialog>
+</body>
+</html>

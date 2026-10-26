@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Seguridad: solo se ejecuta código propio (sin inline, sin terceros) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>Tu Nombre · Junior Backend Developer</title>
+  <meta name="description" content="Junior backend developer (Java, Spring Boot, PostgreSQL, Docker) focused on secure, well-documented web apps. Available for part-time remote work.">
+  <meta name="author" content="Tu Nombre">
+  <meta name="theme-color" content="#f7f8fa">
+
+  <!-- Vista previa al compartir el link (LinkedIn, WhatsApp, Slack) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tu Nombre · Junior Backend Developer">
+  <meta property="og:description" content="Java · Spring Boot · PostgreSQL · Docker. Available for part-time remote work (UTC-3).">
+  <meta property="og:url" content="https://TU-USUARIO.github.io/portfolio/">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/theme-init.js"></script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" data-bind="initials" aria-hidden="true">TN</span>
+        <span class="brand-name" data-bind="name">Tu Nombre</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#about" data-i18n="navAbout">About</a></li>
+          <li><a href="#services" data-i18n="navServices">Services</a></li>
+          <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
+          <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
+          <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+          <li data-learn-link><a class="nav-learn" href="aprender.html" data-i18n="navLearn">Learning</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn lang-btn" id="lang-toggle" type="button" data-i18n-aria="langToggle" aria-label="Cambiar a español">ES</button>
+        <button class="icon-btn" id="theme-toggle" type="button" data-i18n-aria="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" data-i18n-aria="menuOpen" aria-label="Open menu">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="badge"><span class="dot" aria-hidden="true"></span><span data-i18n="available">Available for part-time remote work</span></p>
+          <h1><span data-i18n="heroHello">Hi, I'm</span> <span class="accent" data-bind="name">Tu Nombre</span></h1>
+          <p class="hero-role" data-i18n="heroRole">Junior backend developer focused on secure, well-documented web applications.</p>
+          <p class="hero-text" data-i18n="heroText">I build REST APIs with Java and Spring Boot, ship them in Docker, and check them against the OWASP Top 10.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects" data-i18n="ctaProjects">See my projects</a>
+            <a class="btn" href="#contact" data-i18n="ctaContact">Let's talk</a>
+            <a class="btn btn-link" id="cv-link" href="#top" hidden data-i18n="ctaCv">Download CV</a>
+          </div>
+        </div>
+
+        <div class="terminal" role="img" data-i18n-aria="terminalLabel" aria-label="Terminal summary">
+          <div class="terminal-bar" aria-hidden="true">
+            <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+            <span class="terminal-title">~/portfolio</span>
+          </div>
+<pre class="terminal-body" aria-hidden="true"><span class="t-prompt">$</span> whoami
+<span class="t-out">junior-backend-developer</span>
+
+<span class="t-prompt">$</span> cat stack.txt
+<span class="t-out">Java · Spring Boot · PostgreSQL · Docker</span>
+
+<span class="t-prompt">$</span> cat principles.txt
+<span class="t-ok">✓</span> validate every input
+<span class="t-ok">✓</span> least privilege
+<span class="t-ok">✓</span> document everything
+
+<span class="t-prompt">$</span> status
+<span class="t-ok">●</span> <span class="t-out">available · UTC-3 · 10–15 h/week</span><span class="t-cursor"></span></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container two-col">
+        <div class="section-head">
+          <p class="eyebrow">01</p>
+          <h2 id="about-title" data-i18n="aboutTitle">About me</h2>
+        </div>
+        <div class="about-body">
+          <p data-i18n="aboutP1">I'm studying the University Technician degree in Programming at UTN Buenos Aires and I build real projects alongside my courses.</p>
+          <p data-i18n="aboutP2">I'm growing towards application security: writing backends that are correct and hard to break.</p>
+          <ul class="facts" id="facts"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="section section-alt" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">02</p>
+          <h2 id="services-title" data-i18n="servicesTitle">What I can do for you</h2>
+          <p class="section-intro" data-i18n="servicesIntro">Small and medium tasks with a clear scope.</p>
+        </div>
+        <div class="grid grid-4" id="services-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">03</p>
+          <h2 id="projects-title" data-i18n="projectsTitle">Selected projects</h2>
+          <p class="section-intro" data-i18n="projectsIntro">Each project lists the problem, what I built and the decisions behind it.</p>
+        </div>
+        <div class="filters" id="project-filters" role="group" aria-label="Filter projects"></div>
+        <p class="sr-only" id="projects-count" role="status" aria-live="polite"></p>
+        <div class="projects" id="projects-grid">
+          <noscript><p>Enable JavaScript to see the projects, or visit my GitHub profile.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HABILIDADES ============ -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">04</p>
+          <h2 id="skills-title" data-i18n="skillsTitle">Skills</h2>
+          <p class="section-intro" data-i18n="skillsIntro">What I use in my projects, and what I'm currently learning.</p>
+        </div>
+        <div class="grid grid-3" id="skills-grid"></div>
+        <a class="learn-callout" href="aprender.html" data-learn-link>
+          <span class="learn-callout-text">
+            <strong data-i18n="learnTitle">Learning in public</strong>
+            <span data-i18n="learnText">My study roadmap: topics, resources and the quizzes I use to practice.</span>
+          </span>
+          <span class="learn-callout-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ CÓMO TRABAJO ============ -->
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="container two-col">
+        <div class="section-head">
+          <p class="eyebrow">05</p>
+          <h2 id="process-title" data-i18n="processTitle">How I work</h2>
+          <p class="section-intro" data-i18n="processIntro">Remote work runs on clarity.</p>
+        </div>
+        <ol class="steps" id="process-list"></ol>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section section-alt" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <p class="eyebrow">06</p>
+          <h2 id="contact-title" data-i18n="contactTitle">Let's work together</h2>
+          <p data-i18n="contactText">Tell me what you need and your deadline.</p>
+
+          <ul class="contact-links">
+            <li class="email-row">
+              <a id="email-link" class="contact-link" href="mailto:tu-email@ejemplo.com">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span data-bind="email">tu-email@ejemplo.com</span>
+              </a>
+              <button class="icon-btn icon-btn-sm" id="copy-email" type="button" data-i18n-aria="copyEmail" data-i18n-title="copyEmail" aria-label="Copy email" title="Copy email">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </li>
+            <li>
+              <a id="github-link" class="contact-link" href="https://github.com/" target="_blank" rel="me noopener noreferrer">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                <span>GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a id="linkedin-link" class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="me noopener noreferrer">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+          </ul>
+          <p class="status" id="copy-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <form class="card form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="f-name" data-i18n="formName">Your name</label>
+            <input id="f-name" name="name" type="text" required maxlength="80" autocomplete="name" aria-describedby="f-name-error">
+            <p class="field-error" id="f-name-error"></p>
+          </div>
+          <div class="field">
+            <label for="f-email" data-i18n="formEmail">Your email</label>
+            <input id="f-email" name="email" type="email" required maxlength="120" autocomplete="email" aria-describedby="f-email-error">
+            <p class="field-error" id="f-email-error"></p>
+          </div>
+          <div class="field">
+            <label for="f-type" data-i18n="formType">Type of project</label>
+            <select id="f-type" name="type">
+              <option value="api" data-i18n="typeApi">Backend / API</option>
+              <option value="docker" data-i18n="typeDocker">Docker &amp; deployment</option>
+              <option value="security" data-i18n="typeSecurity">Security review</option>
+              <option value="bug" data-i18n="typeBug">Bug fix / maintenance</option>
+              <option value="other" data-i18n="typeOther">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg" data-i18n="formMessage">Message</label>
+            <textarea id="f-msg" name="message" rows="5" required minlength="20" maxlength="2000" aria-describedby="f-msg-hint f-msg-error"></textarea>
+            <p class="field-hint" id="f-msg-hint" data-i18n="formHint">What do you need, by when, and any links.</p>
+            <p class="field-error" id="f-msg-error"></p>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" data-i18n="formSend">Send via email</button>
+          <p class="status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> <span data-bind="name">Tu Nombre</span></p>
+      <p class="footer-note" data-i18n="footerBuilt">Hand-coded with HTML, CSS and vanilla JavaScript · no trackers · strict Content Security Policy.</p>
+      <p><a id="source-link" href="https://github.com/" target="_blank" rel="noopener noreferrer" data-i18n="footerSource">View source</a></p>
+    </div>
+  </footer>
+</body>
+</html>
